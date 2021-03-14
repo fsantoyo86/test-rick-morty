@@ -1,10 +1,11 @@
 import React from "react";
+import {NavLink} from 'react-router-dom';
 
 /**
  * Landing page component.
  */
 
-function Landing({primary,text,txtButton,img,onClick}) {
+function Landing({primary,text,txtButton,img,link}) {
   
   return (
     <>
@@ -31,7 +32,9 @@ function Landing({primary,text,txtButton,img,onClick}) {
           }
         >
           {text}
-          <button className={(primary === "1" ? "bg-amber-300 text-emerald-500 hover:bg-amber-400 " :"bg-emerald-500 text-amber-300 hover:bg-emerald-700 ") + "text-3xl shadow-xl rounded-full w-56 h-16 lg:mt-20 md:mt-20 sm:mt-5 mt-0 focus:outline-none"} onClick={()=>window.scrollTo(0,window.innerHeight)}>{txtButton}</button>
+          <NavLink to={link}>
+          <button className={(primary === "1" ? "bg-amber-300 text-emerald-500 hover:bg-amber-400 " :"bg-emerald-500 text-amber-300 hover:bg-emerald-700 ") + "text-3xl shadow-xl rounded-full w-56 h-16 lg:mt-20 md:mt-20 sm:mt-5 mt-0 focus:outline-none"}>{txtButton}</button>
+          </NavLink>
         </h1>
       </div>
     </>
